@@ -9,7 +9,8 @@
 
 * Fixed README from warning about nonexistent breaking changes
 
-## [0.1.2] - 11/08/2018
+## [0.1.3] - 11/08/2018
 
+* Skipped version 0.1.2 to match actual package version
 * Added ability to close on tap
 * Modified dependencies
