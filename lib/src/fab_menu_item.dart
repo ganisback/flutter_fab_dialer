@@ -40,7 +40,9 @@ class FabMenuMiniItemWidget extends StatelessWidget {
     this.tooltip,
     this.index,
     this.controller,
-    this.onPressed})
+    this.onPressed,
+	  this.closeOnPress,
+	  this.close})
     : super(key: key);
   final double elevation;
   final String text;
@@ -52,6 +54,8 @@ class FabMenuMiniItemWidget extends StatelessWidget {
   final int index;
   final OnFabMiniMenuItemPressed onPressed;
   final AnimationController controller;
+  final bool closeOnPress;
+  final Function close;
 
   @override
   Widget build(BuildContext context) {
@@ -94,7 +98,12 @@ class FabMenuMiniItemWidget extends StatelessWidget {
               tooltip: tooltip,
               child: icon,
               heroTag: "$index",
-              onPressed: onPressed),
+              onPressed: () {
+								onPressed();
+								if (closeOnPress) {
+									close();
+								}
+							}),
           )
         ],
       ));

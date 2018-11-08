@@ -2,25 +2,26 @@ part of fab_dialer;
 
 class FabDialer extends StatefulWidget {
   const FabDialer(this._fabMiniMenuItemList, this._fabColor, this._fabIcon,
-    [this._closeFabIcon, this._animationDuration]);
+    [this._closeFabIcon, this._animationDuration, this.closeOnTap]);
 
   final List<FabMiniMenuItem> _fabMiniMenuItemList;
   final Color _fabColor;
   final Icon _fabIcon;
   final Icon _closeFabIcon;
   final int _animationDuration;
+  final bool closeOnTap;
 
 
   @override
   FabDialerState createState() =>
     FabDialerState(
       _fabMiniMenuItemList, _fabColor, _fabIcon, _closeFabIcon,
-      _animationDuration);
+      _animationDuration, closeOnTap);
 }
 
 class FabDialerState extends State<FabDialer> with TickerProviderStateMixin {
   FabDialerState(this._fabMiniMenuItemList, this._fabColor, this._fabIcon,
-    this._closeFabIcon, this._animationDuration);
+    this._closeFabIcon, this._animationDuration, this.closeOnTap);
 
   bool _isRotated = false;
   final List<FabMiniMenuItem> _fabMiniMenuItemList;
@@ -28,6 +29,7 @@ class FabDialerState extends State<FabDialer> with TickerProviderStateMixin {
   final Icon _fabIcon;
   final Icon _closeFabIcon;
   final int _animationDuration;
+  final bool closeOnTap;
   List<FabMenuMiniItemWidget> _fabMenuItems;
 
   AnimationController _controller;
@@ -62,6 +64,8 @@ class FabDialerState extends State<FabDialer> with TickerProviderStateMixin {
         fabColor: _fabMiniMenuItemList[i].fabColor,
         chipColor: _fabMiniMenuItemList[i].chipColor,
         controller: _controller,
+        closeOnPress: closeOnTap,
+				close: _rotate
       ));
     }
 

@@ -8,3 +8,8 @@
 ## [0.1.1] - 09/21/2018
 
 * Fixed README from warning about nonexistent breaking changes
+
+## [0.1.2] - 11/08/2018
+
+* Added ability to close on tap
+* Modified dependencies
