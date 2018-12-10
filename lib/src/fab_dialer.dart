@@ -111,6 +111,7 @@ class FabDialerState extends State<FabDialer> with TickerProviderStateMixin {
                         ? closeIcon
                         : _fabIcon,
                     ),
+		    mini: true,
                     backgroundColor: _fabColor,
                     onPressed: _rotate);
                 },
