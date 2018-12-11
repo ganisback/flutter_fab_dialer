@@ -65,7 +65,7 @@ class FabMenuMiniItemWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.end,
         children: <Widget>[
           Container(
-            margin: EdgeInsets.symmetric(horizontal: 8.0),
+            //margin: EdgeInsets.symmetric(horizontal: 8.0),
             child: ScaleTransition(
               scale: CurvedAnimation(
                 parent: controller,
