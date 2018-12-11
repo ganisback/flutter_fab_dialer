@@ -106,7 +106,7 @@ class FabDialerState extends State<FabDialer> with TickerProviderStateMixin {
                     child: Transform(
                       transform: Matrix4.rotationZ(
                         (2 * Math.pi) * _controller.value),
-                      alignment: Alignment.centerLeft,
+                      alignment: Alignment.center,
                       child: _controller.value >= 0.5
                         ? closeIcon
                         : _fabIcon,
